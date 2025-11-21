@@ -45,12 +45,15 @@ header h1 {
     gap: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 
-    width: 100%;        /* 🔥 MISMO ANCHO QUE EL BOTÓN PRINCIPAL */
-    box-sizing: border-box; /* 🔥 EVITA QUE el padding cambie el ancho */
+    /* 🔥 LA CLAVE: ancho EXACTO del contenedor */
+    width: 100%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .submenu a {
-    display: block; /* ← OCUPA TODO EL ANCHO, EVITA SUPERPOSICIONES */
+    display: block;
     width: 100%;
     padding: 12px;
     text-decoration: none;
@@ -65,4 +68,3 @@ header h1 {
     transform: translateY(2px);
     box-shadow: 0 1px 0 #b4d9ff;
 }
-
