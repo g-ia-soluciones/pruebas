@@ -1,1 +1,70 @@
+/* Fondo general */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #cfe9ff; /* celeste pastel */
+    color: #003060;
+    text-align: center;
+}
 
+/* Título */
+header h1 {
+    padding: 20px;
+    margin: 0;
+    font-size: 28px;
+    color: #002244;
+}
+
+/* Contenedores de menú */
+.menu-container {
+    margin: 20px auto;
+    width: 250px;
+}
+
+/* Botones principales */
+.menu-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    /* Relieve */
+    box-shadow: 0 4px 0 #8bb7e0;
+    transition: 0.1s ease;
+}
+
+.menu-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #8bb7e0;
+}
+
+/* Submenús */
+.submenu {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+    background: #e8f4ff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.submenu a {
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #003060;
+    background: #ffffff;
+
+    border-radius: 8px;
+    box-shadow: 0 3px 0 #b4d9ff;
+    transition: 0.1s ease;
+}
+
+.submenu a:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #b4d9ff;
+}
