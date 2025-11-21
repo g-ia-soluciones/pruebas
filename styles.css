@@ -1,13 +1,11 @@
-/* Fondo general */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #cfe9ff; /* celeste pastel */
+    background: #cfe9ff;
     color: #003060;
     text-align: center;
 }
 
-/* Título */
 header h1 {
     padding: 20px;
     margin: 0;
@@ -15,13 +13,11 @@ header h1 {
     color: #002244;
 }
 
-/* Contenedores de menú */
 .menu-container {
     margin: 20px auto;
     width: 250px;
 }
 
-/* Botones principales */
 .menu-btn {
     width: 100%;
     padding: 12px;
@@ -30,8 +26,6 @@ header h1 {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-
-    /* Relieve */
     box-shadow: 0 4px 0 #8bb7e0;
     transition: 0.1s ease;
 }
@@ -41,7 +35,6 @@ header h1 {
     box-shadow: 0 1px 0 #8bb7e0;
 }
 
-/* Submenús */
 .submenu {
     display: none;
     flex-direction: column;
@@ -58,7 +51,6 @@ header h1 {
     text-decoration: none;
     color: #003060;
     background: #ffffff;
-
     border-radius: 8px;
     box-shadow: 0 3px 0 #b4d9ff;
     transition: 0.1s ease;
@@ -68,3 +60,4 @@ header h1 {
     transform: translateY(2px);
     box-shadow: 0 1px 0 #b4d9ff;
 }
+
