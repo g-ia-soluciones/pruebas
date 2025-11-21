@@ -16,6 +16,12 @@ header h1 {
 .menu-container {
     margin: 20px auto;
     width: 250px;
+    text-align: center;
+
+    /* 🔥 Ahora le damos un outline invisible que alinea todo perfecto */
+    border: 2px solid transparent;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .menu-btn {
@@ -47,9 +53,7 @@ header h1 {
 
     /* 🔥 LA CLAVE: ancho EXACTO del contenedor */
     width: 100%;
-    max-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
+margin: 0;
 }
 
 .submenu a {
