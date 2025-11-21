@@ -42,8 +42,11 @@ header h1 {
     background: #e8f4ff;
     border-radius: 10px;
     padding: 10px;
-    gap: 10px; /* ← SEPARA CADA BOTÓN DEL MENÚ */
+    gap: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    width: 100%;        /* 🔥 MISMO ANCHO QUE EL BOTÓN PRINCIPAL */
+    box-sizing: border-box; /* 🔥 EVITA QUE el padding cambie el ancho */
 }
 
 .submenu a {
