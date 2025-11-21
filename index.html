@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Congregación Patricios</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
 
+<body>
+    <header>
+        <h1>Congregación Patricios</h1>
+    </header>
+
+    <main>
+        <!-- BOTÓN INFORMES -->
+        <div class="menu-container">
+            <button class="menu-btn" onclick="toggleMenu('menuInformes')">Informes</button>
+            <div id="menuInformes" class="submenu">
+                <a href="#">Insertar nuevo informe</a>
+                <a href="#">Modificar informe</a>
+            </div>
+        </div>
+
+        <!-- BOTÓN REGISTRO -->
+        <div class="menu-container">
+            <button class="menu-btn" onclick="toggleMenu('menuRegistro')">Registro</button>
+            <div id="menuRegistro" class="submenu">
+                <a href="#">Editar registros</a>
+                <a href="#">Crear nuevo registro</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
