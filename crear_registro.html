@@ -3,17 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear nuevo registro</title>
-
-    <style>
-        body { margin:0; padding:20px; font-family:Arial,sans-serif; background:#cfe9ff; color:#003060; }
-        h1 { margin:0; font-size:26px; text-align:left; color:#002244; }
-        .back-btn { display:inline-block; padding:10px 14px; background:#fff; color:#003060; text-decoration:none; border-radius:8px; box-shadow:0 3px 0 #8bb7e0; font-size:16px; margin-bottom:20px; }
-        .back-btn:active { transform:translateY(2px); box-shadow:0 1px 0 #8bb7e0; }
-    </style>
+    <title>Crear Publicador</title>
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
-<a href="index.html" class="back-btn">⬅ Volver al inicio</a>
-<h1>Crear nuevo registro</h1>
+
+    <header>
+        <h1>Crear nuevo registro</h1>
+    </header>
+
+    <main>
+        <form id="form-publicador" class="formulario">
+
+            <label>Nombre:
+                <input type="text" name="nombre" required>
+            </label>
+
+            <label>Fecha de nacimiento:
+                <input type="date" name="fechaNacimiento">
+            </label>
+
+            <label>Sexo:</label>
+            <label><input type="radio" name="sexo" value="Hombre" checked> Hombre</label>
+            <label><input type="radio" name="sexo" value="Mujer"> Mujer</label>
+
+            <label>Fecha de bautismo:
+                <input type="date" name="fechaBautismo">
+            </label>
+
+            <label>Grupo:</label>
+            <label><input type="radio" name="grupo" value="Otras ovejas" checked> Otras ovejas</label>
+            <label><input type="radio" name="grupo" value="Ungido"> Ungido</label>
+
+            <label>Designaciones:</label>
+            <label><input type="checkbox" name="anciano"> Anciano</label>
+            <label><input type="checkbox" name="siervoMinisterial"> Siervo ministerial</label>
+            <label><input type="checkbox" name="precursorRegular"> Precursor regular</label>
+            <label><input type="checkbox" name="precursorEspecial"> Precursor especial</label>
+            <label><input type="checkbox" name="misioneroCampo"> Misionero que sirve en el campo</label>
+
+            <button type="submit">Guardar registro</button>
+        </form>
+    </main>
+
+    <script type="module">
+        import { collection, addDoc }
+            from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const db = window._firebase.db;
+
+        // Manejar envío del formulario
+        const form = document.getElementById("form-publicador");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const datos = {
+                nombre: form.nombre.value.trim(),
+                fechaNacimiento: form.fechaNacimiento.value || null,
+                sexo: form.sexo.value,
+                fechaBautismo: form.fechaBautismo.value || null,
+                grupo: form.grupo.value,
+                anciano: form.anciano.checked,
+                siervoMinisterial: form.siervoMinisterial.checked,
+                precursorRegular: form.precursorRegular.checked,
+                precursorEspecial: form.precursorEspecial.checked,
+                misioneroCampo: form.misioneroCampo.checked,
+                activo: true
+            };
+
+            try {
+                await addDoc(collection(db, "publicadores"), datos);
+                alert("Publicador guardado con éxito");
+                form.reset();
+            } catch (error) {
+                console.error(error);
+                alert("Error al guardar el registro");
+            }
+        });
+    </script>
+
 </body>
 </html>
