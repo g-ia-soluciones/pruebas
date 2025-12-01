@@ -82,6 +82,23 @@
             }
         });
     </script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+    const firebaseConfig = {
+        apiKey: "AIzaSyDpBHhVkMFE7LkwTzcjRj4KppASOO6I1bY",
+        authDomain: "registros-publicadores.firebaseapp.com",
+        projectId: "registros-publicadores",
+        storageBucket: "registros-publicadores.firebasestorage.app",
+        messagingSenderId: "51876330886",
+        appId: "1:51876330886:web:bb478e92a55a01fa138007"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    window._firebase = { db };
+</script>
 </body>
 </html>
