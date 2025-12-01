@@ -46,13 +46,37 @@
         </form>
     </main>
 
+    <!-- ===================================================== -->
+    <!-- 🔥 1) Inicialización de Firebase (ESTO VA PRIMERO) -->
+    <!-- ===================================================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpBHhVkMFE7LkwTzcjRj4KppASOO6I1bY",
+            authDomain: "registros-publicadores.firebaseapp.com",
+            projectId: "registros-publicadores",
+            storageBucket: "registros-publicadores.firebasestorage.app",
+            messagingSenderId: "51876330886",
+            appId: "1:51876330886:web:bb478e92a55a01fa138007"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        window._firebase = { db };
+    </script>
+
+    <!-- ===================================================== -->
+    <!-- 🔥 2) Lógica del formulario (ESTO VA DESPUÉS) -->
+    <!-- ===================================================== -->
     <script type="module">
         import { collection, addDoc }
             from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
         const db = window._firebase.db;
 
-        // Manejar envío del formulario
         const form = document.getElementById("form-publicador");
 
         form.addEventListener("submit", async (e) => {
@@ -82,23 +106,6 @@
             }
         });
     </script>
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-    const firebaseConfig = {
-        apiKey: "AIzaSyDpBHhVkMFE7LkwTzcjRj4KppASOO6I1bY",
-        authDomain: "registros-publicadores.firebaseapp.com",
-        projectId: "registros-publicadores",
-        storageBucket: "registros-publicadores.firebasestorage.app",
-        messagingSenderId: "51876330886",
-        appId: "1:51876330886:web:bb478e92a55a01fa138007"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    window._firebase = { db };
-</script>
 </body>
 </html>
