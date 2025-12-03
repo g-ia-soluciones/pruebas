@@ -47,9 +47,9 @@
     </form>
 </main>
 
-<!-- ========================================= -->
-<!-- 1) Inicialización Firebase                 -->
-<!-- ========================================= -->
+<!-- ===================================================== -->
+<!-- 1) Inicialización Firebase                           -->
+<!-- ===================================================== -->
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
     import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -69,15 +69,14 @@
     window._firebase = { db };
 </script>
 
-<!-- ========================================= -->
-<!-- 2) Guardar datos Formulario               -->
-<!-- ========================================= -->
+<!-- ===================================================== -->
+<!-- 2) Guardado en Firestore                              -->
+<!-- ===================================================== -->
 <script type="module">
     import { collection, addDoc }
         from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
     const db = window._firebase.db;
-
     const form = document.getElementById("form-publicador");
 
     form.addEventListener("submit", async (e) => {
@@ -110,4 +109,3 @@
 
 </body>
 </html>
-
