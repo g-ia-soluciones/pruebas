@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Publicador</title>
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -48,12 +48,14 @@
 </main>
 
 <!-- ===================================================== -->
-<!-- 1) Inicialización Firebase                           -->
+<!-- 🔥 1 SOLO SCRIPT — FIREBASE + FORM LOGIC              -->
 <!-- ===================================================== -->
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+    import { getFirestore, collection, addDoc }
+        from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+    // Inicializar Firebase
     const firebaseConfig = {
         apiKey: "AIzaSyDpBHhVkMFE7LkwTzcjRj4KppASOO6I1bY",
         authDomain: "registros-publicadores.firebaseapp.com",
@@ -66,17 +68,7 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    window._firebase = { db };
-</script>
-
-<!-- ===================================================== -->
-<!-- 2) Guardado en Firestore                              -->
-<!-- ===================================================== -->
-<script type="module">
-    import { collection, addDoc }
-        from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-    const db = window._firebase.db;
+    // Manejar formulario
     const form = document.getElementById("form-publicador");
 
     form.addEventListener("submit", async (e) => {
@@ -109,3 +101,4 @@
 
 </body>
 </html>
+
